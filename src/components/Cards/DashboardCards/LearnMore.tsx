@@ -4,7 +4,7 @@ import { FaArrowRight } from 'react-icons/fa';
 
 const LearnMoreCard = () => {
   return (
-    <div className="rounded-3xl text-white relative overflow-clip w-full p-5 px-6">
+    <div className="rounded-3xl text-white relative overflow-clip w-full min-h-100 p-5 px-6">
       <div className="absolute top-0 left-0 size-full">
         <Image src={banner} />
       </div>
