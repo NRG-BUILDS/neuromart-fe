@@ -7,7 +7,7 @@ import SignIn from './pages/Authentication/SignIn';
 import SignUp from './pages/Authentication/SignUp';
 import Calendar from './pages/Calendar';
 import Chart from './pages/Chart';
-import ECommerce from './pages/Dashboard/ECommerce';
+import Dashboard from './pages/Dashboard';
 import FormElements from './pages/Form/FormElements';
 import FormLayout from './pages/Form/FormLayout';
 import Profile from './pages/Profile';
@@ -15,7 +15,8 @@ import Settings from './pages/Settings';
 import Tables from './pages/Tables';
 import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
-import DashboardLayout from './layout/DefaultLayout';
+import DashboardLayout from './layout/DashboardLayout';
+import LandingPage from './pages/LandingPage';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -33,6 +34,15 @@ function App() {
     <Loader />
   ) : (
     <Routes>
+      <Route
+        index
+        element={
+          <>
+            <PageTitle title="Neuromart" />
+            <LandingPage />
+          </>
+        }
+      />
       <Route
         path="/auth/signin"
         element={
@@ -55,11 +65,11 @@ function App() {
       {/* ===============DASHBOARD PAGES WRAPPER START=============== */}
       <Route element={<DashboardLayout />}>
         <Route
-          index
+          path="/dashboard"
           element={
             <>
               <PageTitle title="eCommerce Dashboard | Neuromart" />
-              <ECommerce />
+              <Dashboard />
             </>
           }
         />
