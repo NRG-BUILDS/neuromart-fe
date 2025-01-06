@@ -1,11 +1,11 @@
 import React from 'react';
 import CardDataStats from '../../components/CardDataStats';
-import ChartThree from '../../components/Charts/ChartThree';
-import ChartTwo from '../../components/Charts/ChartTwo';
-import ChatCard from '../../components/Chat/ChatCard';
-import MapOne from '../../components/Maps/MapOne';
-import TableOne from '../../components/Tables/TableOne';
+import DownloadStatistics from '../../components/Charts/DashboardCharts/DownloadStatisticsChart';
+
 import TopPerformingChart from '@/components/Charts/DashboardCharts/TopPerforming';
+import ConnectedWallets from '@/components/Charts/DashboardCharts/ConnectedWallets';
+import Revenue from '@/components/Charts/DashboardCharts/RevenueChart';
+import LearnMoreCard from '@/components/Cards/DashboardCards/LearnMore';
 
 const Dashboard: React.FC = () => {
   return (
@@ -110,13 +110,15 @@ const Dashboard: React.FC = () => {
 
       <div className="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
         <TopPerformingChart />
-        <ChartTwo />
-        <ChartThree />
-        <MapOne />
-        <div className="col-span-12 xl:col-span-8">
-          <TableOne />
+        <div className="flex flex-col col-span-12 xl:col-span-6 gap-4 ">
+          <DownloadStatistics />
+          <ConnectedWallets />
         </div>
-        <ChatCard />
+
+        <Revenue />
+        <div className="col-span-12 xl:col-span-8 *:h-full">
+          <LearnMoreCard />
+        </div>
       </div>
     </>
   );
