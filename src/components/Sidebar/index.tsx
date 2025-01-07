@@ -27,7 +27,7 @@ const routes = [
 ];
 const marketplaceRoutes = [
   { label: 'Datasets', path: '/marketplace/datasets', icon: <IoPerson /> },
-  { label: 'Models', path: '/agents', icon: <IoDocument /> },
+  { label: 'Models', path: '/marketplace/models', icon: <IoDocument /> },
   { label: 'Sign Up', path: '/editor', icon: <IoRocket /> },
 ];
 

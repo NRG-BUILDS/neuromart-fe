@@ -17,6 +17,8 @@ import Alerts from './pages/UiElements/Alerts';
 import Buttons from './pages/UiElements/Buttons';
 import DashboardLayout from './layout/DashboardLayout';
 import LandingPage from './pages/LandingPage';
+import AIAgents from './pages/AIAgents';
+import Datasets from './pages/Datasets';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -68,8 +70,26 @@ function App() {
           path="/dashboard"
           element={
             <>
-              <PageTitle title="eCommerce Dashboard | Neuromart" />
+              <PageTitle title="Dashboard | Neuromart" />
               <Dashboard />
+            </>
+          }
+        />
+        <Route
+          path="/agents"
+          element={
+            <>
+              <PageTitle title="AI Agents | Neuromart" />
+              <AIAgents />
+            </>
+          }
+        />
+        <Route
+          path="/marketplace/datasets"
+          element={
+            <>
+              <PageTitle title="Datasets | Neuromart" />
+              <Datasets />
             </>
           }
         />

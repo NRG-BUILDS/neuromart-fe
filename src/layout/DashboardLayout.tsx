@@ -8,7 +8,7 @@ const DashboardLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="bg-black text-bodydark">
+    <div className="bg-black text-white">
       {/* <!-- ===== Page Wrapper Start ===== --> */}
       <div className="flex gap-2  h-screen overflow-hidden">
         {/* <!-- ===== Sidebar Start ===== --> */}
@@ -26,7 +26,7 @@ const DashboardLayout = () => {
 
           {/* <!-- ===== Main Content Start ===== --> */}
           <main>
-            <div className=" relative mx-auto max-w-screen-2xl p-1 md:p-6 2xl:p-10">
+            <div className=" relative mx-auto max-w-screen-2xl min-h-screen p-1 md:p-6 2xl:p-10">
               <Outlet />
             </div>
           </main>
