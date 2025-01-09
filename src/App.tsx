@@ -20,6 +20,7 @@ import LandingPage from './pages/LandingPage';
 import AIAgents from './pages/AIAgents';
 import Datasets from './pages/Datasets';
 import UploadDatasets from './pages/Datasets/UploadDatasets';
+import Models from './pages/Models';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -91,6 +92,15 @@ function App() {
             <>
               <PageTitle title="Datasets | Neuromart" />
               <Datasets />
+            </>
+          }
+        />
+        <Route
+          path="/marketplace/models"
+          element={
+            <>
+              <PageTitle title="Models | Neuromart" />
+              <Models />
             </>
           }
         />

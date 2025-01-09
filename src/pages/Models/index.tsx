@@ -8,20 +8,18 @@ import { Link } from 'react-router-dom';
 
 const tabs = [
   { label: 'All', value: '' },
-  { label: 'Drugs and Medicine', value: 'Drugs and Medicine' },
-  { label: 'Education', value: 'Education' },
-  { label: 'Earth & Nature', value: 'Earth & Nature' },
-  { label: 'Science & Technology', value: 'Science & Technology' },
+  { label: 'Text Generation', value: 'Text Generation' },
+  { label: 'Image Generation', value: 'Image Generation' },
+  { label: 'Audio Synthesis', value: 'Audio Synthesis' },
+  { label: 'Others', value: 'Others' },
 ];
 
-const Datasets = () => {
+const Models = () => {
   return (
     <>
       <HeroCard
-        description="Discover, analyze, and share high-quality datasets. Go-to platform
-            for seamless exploration, analysis, and collaborative sharing of
-            top-notch datasets."
-        title="Datasets"
+        title="Models"
+        description="Simplifies your search for ready-to-use machine learning models. Discover and deploy hundreds of trained models effortlessly, all in one convenient place."
         video={video}
         videoPoster={videoPoster}
         action={<Button>Upload</Button>}
@@ -39,7 +37,7 @@ const Datasets = () => {
               title="No Datasets Found"
               action={
                 <Button asChild>
-                  <Link to={'upload'}>Upload Dataset</Link>
+                  <Link to={'upload'}>Upload Model</Link>
                 </Button>
               }
             />
@@ -50,4 +48,4 @@ const Datasets = () => {
   );
 };
 
-export default Datasets;
+export default Models;
