@@ -18,7 +18,7 @@ interface SidebarProps {
 const routes = [
   { label: 'Dashboard', path: '/dashboard', icon: <FaHome /> },
   { label: 'AI Agents', path: '/agents', icon: <FaRobot /> },
-  { label: 'Code Editor', path: '/editor', icon: <IoCard /> },
+  { label: 'Code Editor', path: '/code-editor', icon: <IoCard /> },
   {
     label: 'Decentralized computation',
     path: '/comp',
@@ -28,7 +28,7 @@ const routes = [
 const marketplaceRoutes = [
   { label: 'Datasets', path: '/marketplace/datasets', icon: <IoPerson /> },
   { label: 'Models', path: '/marketplace/models', icon: <IoDocument /> },
-  { label: 'Sign Up', path: '/editor', icon: <IoRocket /> },
+  { label: 'Sign Up', path: '/signup', icon: <IoRocket /> },
 ];
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {

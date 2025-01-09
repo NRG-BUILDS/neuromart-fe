@@ -21,6 +21,7 @@ import AIAgents from './pages/AIAgents';
 import Datasets from './pages/Datasets';
 import UploadDatasets from './pages/Datasets/UploadDatasets';
 import Models from './pages/Models';
+import CodeEditor from './pages/CodeEditor';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -74,6 +75,15 @@ function App() {
             <>
               <PageTitle title="Dashboard | Neuromart" />
               <Dashboard />
+            </>
+          }
+        />
+        <Route
+          path="/code-editor"
+          element={
+            <>
+              <PageTitle title="Code Editor | Neuromart" />
+              <CodeEditor />
             </>
           }
         />
