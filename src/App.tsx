@@ -19,6 +19,7 @@ import DashboardLayout from './layout/DashboardLayout';
 import LandingPage from './pages/LandingPage';
 import AIAgents from './pages/AIAgents';
 import Datasets from './pages/Datasets';
+import UploadDatasets from './pages/Datasets/UploadDatasets';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -93,6 +94,17 @@ function App() {
             </>
           }
         />
+        <Route
+          path="/marketplace/datasets/upload"
+          element={
+            <>
+              <PageTitle title="Upload Datasets | Neuromart" />
+              <UploadDatasets />
+            </>
+          }
+        />
+
+        {/* ================DESIGN ASSETS================ */}
         <Route
           path="/calendar"
           element={

@@ -11,8 +11,8 @@ const Header = (props: {
   setSidebarOpen: (arg0: boolean) => void;
 }) => {
   return (
-    <header className="sticky top-0 z-40 flex w-full  text-gray-100 drop-shadow-1 dark:drop-shadow-none">
-      <div className="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11">
+    <header className=" top-0 z-40 flex w-full  text-gray-100 drop-shadow-1 dark:drop-shadow-none">
+      <div className="flex flex-grow items-center justify-between px-4 py-4  md:px-6 2xl:px-11">
         <div className="flex items-center gap-2 sm:gap-4 lg:hidden">
           {/* <!-- Hamburger Toggle BTN --> */}
           <button
@@ -63,8 +63,10 @@ const Header = (props: {
         </div>
         <div className="hidden lg:block">
           <div className="grid gap-0.5">
-            <span>Breadcrumb / Dashboard</span>
-            <span>Dashboard</span>
+            <span className="text-xs">
+              <span className="text-gray-500">Dashboard</span> / AI Agent
+            </span>
+            <span>AI Agent Marketplace</span>
           </div>
         </div>
 
