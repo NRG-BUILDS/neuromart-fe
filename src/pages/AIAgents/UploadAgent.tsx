@@ -56,7 +56,7 @@ const categories = [
   { name: 'Groceries', slug: 'groceries' },
 ];
 
-const UploadDatasets = () => {
+const UploadAgent = () => {
   const { reset, ...form } = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -101,26 +101,26 @@ const UploadDatasets = () => {
             <FileUpload
               name={'dataset'}
               form={form}
-              title="Upload the Dataset which you want to create."
-              acceptedFileType=".csv, .json"
+              title="Upload the AI-Agent (.tar.gz)"
+              acceptedFileType=".tar.gz"
             />
             <FileUpload
               name={'demo'}
               form={form}
-              title="Upload the Demo Dataset which contains minimum 10 rows."
-              acceptedFileType=".csv, .json"
+              title="Upload the documentation (.pdf) which contains guidelines of using your AI Agent."
+              acceptedFileType=".pdf"
             />
             <FileUpload
               name={'dataset_image'}
               form={form}
-              title="Upload the image of your dataset cover."
+              title="Upload the image (.jpeg, .jpg, .png) of your AI Agent cover."
               acceptedFileType=".jpg, .png"
               maxFileSize={10}
             />
             <FileUpload
               name={'dataset_license'}
               form={form}
-              title="Upload the license which contains the terms and conditions of the dataset."
+              title="Upload the license (.pdf) which contains the terms and conditions of the AI Agent."
               acceptedFileType=".pdf"
               maxFileSize={10}
             />
@@ -133,11 +133,11 @@ const UploadDatasets = () => {
                 name="desc"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Describe your dataset</FormLabel>
+                    <FormLabel>Describe your AI Agent</FormLabel>
                     <FormControl>
                       <Textarea
                         rows={8}
-                        placeholder="Your dataset description..."
+                        placeholder="Your description..."
                         className="resize-none"
                         {...field}
                       />
@@ -148,7 +148,45 @@ const UploadDatasets = () => {
                 )}
               />
             </div>
-            <FormInput name="name" label="Dataset Title" form={form} />
+            <FormField
+              control={form.control}
+              name="features"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Key Features</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      rows={8}
+                      placeholder="Enter AI Agent Key Features..."
+                      className="resize-none"
+                      {...field}
+                    />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="useCase"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>UseCases</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      rows={8}
+                      placeholder="Enter AI Agent Use Cases..."
+                      className="resize-none"
+                      {...field}
+                    />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormInput name="name" label="AI Agent Title" form={form} />
             <FormField
               control={form.control}
               name="categorySlug"
@@ -188,7 +226,7 @@ const UploadDatasets = () => {
               type="number"
               label={
                 <span>
-                  Price of Dataset{' '}
+                  Price of AI Agent{' '}
                   <span className="text-purple-400 text-xs">(in BBT)</span>
                 </span>
               }
@@ -199,7 +237,7 @@ const UploadDatasets = () => {
               name="categorySlug"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Dataset For</FormLabel>
+                  <FormLabel>AI Agent For</FormLabel>
                   <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}
@@ -224,7 +262,7 @@ const UploadDatasets = () => {
             />
           </div>
           <div className="col-span-full">
-            <Button type="submit">Create Dataset</Button>
+            <Button type="submit">Create AI Agent</Button>
           </div>
         </form>
       </Form>
@@ -232,7 +270,7 @@ const UploadDatasets = () => {
   );
 };
 
-export default UploadDatasets;
+export default UploadAgent;
 
 const FormInput = ({
   name,

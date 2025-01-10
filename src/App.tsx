@@ -23,6 +23,7 @@ import UploadDatasets from './pages/Datasets/UploadDatasets';
 import Models from './pages/Models';
 import CodeEditor from './pages/CodeEditor';
 import UploadModels from './pages/Models/UploadModels';
+import UploadAgent from './pages/AIAgents/UploadAgent';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -94,6 +95,15 @@ function App() {
             <>
               <PageTitle title="AI Agents | Neuromart" />
               <AIAgents />
+            </>
+          }
+        />
+        <Route
+          path="/agents/upload"
+          element={
+            <>
+              <PageTitle title="Upload AI Agents | Neuromart" />
+              <UploadAgent />
             </>
           }
         />

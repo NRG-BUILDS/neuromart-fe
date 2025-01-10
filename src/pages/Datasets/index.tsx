@@ -24,7 +24,11 @@ const Datasets = () => {
         title="Datasets"
         video={video}
         videoPoster={videoPoster}
-        action={<Button>Upload</Button>}
+        action={
+          <Button asChild>
+            <Link to={'upload'}>Upload</Link>
+          </Button>
+        }
       />
 
       <section>

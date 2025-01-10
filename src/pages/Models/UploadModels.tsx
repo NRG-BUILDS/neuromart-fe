@@ -102,7 +102,7 @@ const UploadModels = () => {
               name={'model'}
               form={form}
               title="Upload the ML-Model"
-              acceptedFileType=".tar, .gz"
+              acceptedFileType=".tar.gz"
             />
             <FileUpload
               name={'demo'}

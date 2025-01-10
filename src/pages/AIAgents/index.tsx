@@ -28,7 +28,11 @@ const AIAgents = () => {
         description="Discover, explore and connect with the best AI Agents for your benefits."
         video={video}
         videoPoster={videoPoster}
-        action={<Button>Upload</Button>}
+        action={
+          <Button asChild>
+            <Link to={'upload'}>Upload</Link>
+          </Button>
+        }
       />
 
       <section>

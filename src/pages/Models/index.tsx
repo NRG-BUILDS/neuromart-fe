@@ -22,7 +22,11 @@ const Models = () => {
         description="Simplifies your search for ready-to-use machine learning models. Discover and deploy hundreds of trained models effortlessly, all in one convenient place."
         video={video}
         videoPoster={videoPoster}
-        action={<Button>Upload</Button>}
+        action={
+          <Button asChild>
+            <Link to={'upload'}>Upload</Link>
+          </Button>
+        }
       />
 
       <section>
