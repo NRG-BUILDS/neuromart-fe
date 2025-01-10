@@ -99,7 +99,7 @@ const UploadDatasets = () => {
         >
           <div className="grid items-stretch gap-5 lg:grid-cols-2">
             <FileUpload
-              name={'demo'}
+              name={'dataset'}
               form={form}
               title="Upload the Dataset which you want to create."
               acceptedFileType=".csv, .json"

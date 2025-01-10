@@ -56,7 +56,7 @@ const categories = [
   { name: 'Groceries', slug: 'groceries' },
 ];
 
-const UploadDatasets = () => {
+const UploadModels = () => {
   const { reset, ...form } = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -99,30 +99,23 @@ const UploadDatasets = () => {
         >
           <div className="grid items-stretch gap-5 lg:grid-cols-2">
             <FileUpload
-              name={'demo'}
+              name={'model'}
               form={form}
-              title="Upload the Dataset which you want to create."
-              acceptedFileType=".csv, .json"
+              title="Upload the ML-Model"
+              acceptedFileType=".tar, .gz"
             />
             <FileUpload
               name={'demo'}
               form={form}
-              title="Upload the Demo Dataset which contains minimum 10 rows."
-              acceptedFileType=".csv, .json"
+              title="Upload the license which contains terms and conditions of the ML-Model."
+              acceptedFileType=".pdf"
             />
             <FileUpload
               name={'dataset_image'}
               form={form}
-              title="Upload the image of your dataset cover."
-              acceptedFileType=".jpg, .png"
-              maxFileSize={3}
-            />
-            <FileUpload
-              name={'dataset_license'}
-              form={form}
-              title="Upload the license which contains the terms and conditions of the dataset."
+              title="Upload the documentation which contains guidelines of using your Model."
               acceptedFileType=".pdf"
-              maxFileSize={10}
+              maxFileSize={3}
             />
           </div>
 
@@ -133,11 +126,11 @@ const UploadDatasets = () => {
                 name="desc"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Describe your dataset</FormLabel>
+                    <FormLabel>Describe your model</FormLabel>
                     <FormControl>
                       <Textarea
                         rows={8}
-                        placeholder="Your dataset description..."
+                        placeholder="Your model description..."
                         className="resize-none"
                         {...field}
                       />
@@ -148,7 +141,7 @@ const UploadDatasets = () => {
                 )}
               />
             </div>
-            <FormInput name="name" label="Dataset Title" form={form} />
+            <FormInput name="name" label="Model Title" form={form} />
             <FormField
               control={form.control}
               name="categorySlug"
@@ -158,7 +151,7 @@ const UploadDatasets = () => {
                     Categories{' '}
                     <span className="text-xs text-purple-400">
                       (Category will be updated by our ML Model, once you upload
-                      the Dataset.)
+                      the Model.)
                     </span>
                   </FormLabel>
                   <Select
@@ -188,7 +181,7 @@ const UploadDatasets = () => {
               type="number"
               label={
                 <span>
-                  Price of Dataset{' '}
+                  Price of Model{' '}
                   <span className="text-purple-400 text-xs">(in BBT)</span>
                 </span>
               }
@@ -199,7 +192,7 @@ const UploadDatasets = () => {
               name="categorySlug"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Dataset For</FormLabel>
+                  <FormLabel>Model For</FormLabel>
                   <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}
@@ -222,9 +215,10 @@ const UploadDatasets = () => {
                 </FormItem>
               )}
             />
-          </div>
-          <div className="col-span-full">
-            <Button type="submit">Create Dataset</Button>
+            <FormInput name="tags" label="Tags/Keywords" form={form} />
+            <div className="mt-7">
+              <Button type="submit">Create Model</Button>
+            </div>
           </div>
         </form>
       </Form>
@@ -232,7 +226,7 @@ const UploadDatasets = () => {
   );
 };
 
-export default UploadDatasets;
+export default UploadModels;
 
 const FormInput = ({
   name,
@@ -318,6 +312,7 @@ const FileUpload = ({
               )}
             </div>
           </div>
+          <div></div>
           <Button variant={'outline'} type="button" asChild>
             <span>Select</span>
           </Button>

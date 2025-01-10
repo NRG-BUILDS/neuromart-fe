@@ -22,6 +22,7 @@ import Datasets from './pages/Datasets';
 import UploadDatasets from './pages/Datasets/UploadDatasets';
 import Models from './pages/Models';
 import CodeEditor from './pages/CodeEditor';
+import UploadModels from './pages/Models/UploadModels';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -106,6 +107,15 @@ function App() {
           }
         />
         <Route
+          path="/marketplace/datasets/upload"
+          element={
+            <>
+              <PageTitle title="Upload Datasets | Neuromart" />
+              <UploadDatasets />
+            </>
+          }
+        />
+        <Route
           path="/marketplace/models"
           element={
             <>
@@ -115,11 +125,11 @@ function App() {
           }
         />
         <Route
-          path="/marketplace/datasets/upload"
+          path="/marketplace/models/upload"
           element={
             <>
-              <PageTitle title="Upload Datasets | Neuromart" />
-              <UploadDatasets />
+              <PageTitle title="Upload Models | Neuromart" />
+              <UploadModels />
             </>
           }
         />
