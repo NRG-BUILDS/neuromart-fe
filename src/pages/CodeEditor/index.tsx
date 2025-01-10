@@ -69,6 +69,7 @@ const CodeEditor = () => {
             <Editor
               height="500px"
               defaultLanguage={editorLanguage}
+              language={editorLanguage}
               defaultValue="// Start coding!"
               onChange={handleEditorChange}
               theme="vs-dark"

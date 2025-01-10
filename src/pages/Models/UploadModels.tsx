@@ -27,6 +27,7 @@ import { FiUploadCloud } from 'react-icons/fi';
 const formSchema = z.object({
   name: z.string().min(5).max(120),
   desc: z.string().min(2).max(9999999999999),
+  tags: z.string().min(2).max(9999999999999),
   priceOld: z
     .string()
     .transform((val) => parseInt(val, 10))
@@ -63,7 +64,7 @@ const UploadModels = () => {
       name: '',
       desc: '',
       categorySlug: '',
-
+      tags: '',
       priceOld: 0,
       price: 0,
     },
