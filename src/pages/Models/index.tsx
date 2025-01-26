@@ -38,7 +38,7 @@ const Models = () => {
           </TabsList>
           <TabsContent value="">
             <EmptyState
-              title="No Datasets Found"
+              title="No Models Found"
               action={
                 <Button asChild>
                   <Link to={'upload'}>Upload Model</Link>

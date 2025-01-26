@@ -24,6 +24,8 @@ import Models from './pages/Models';
 import CodeEditor from './pages/CodeEditor';
 import UploadModels from './pages/Models/UploadModels';
 import UploadAgent from './pages/AIAgents/UploadAgent';
+import DecentralizedComputation from './pages/DecenComputation';
+import ComputeContainers from './pages/DecenComputation/Containers';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -86,6 +88,24 @@ function App() {
             <>
               <PageTitle title="Code Editor | Neuromart" />
               <CodeEditor />
+            </>
+          }
+        />
+        <Route
+          path="/decentralized_computation"
+          element={
+            <>
+              <PageTitle title="Decentralized Computation | Neuromart" />
+              <DecentralizedComputation />
+            </>
+          }
+        />
+        <Route
+          path="/decentralized_computation/containers"
+          element={
+            <>
+              <PageTitle title="Decentralized Computation | Neuromart" />
+              <ComputeContainers />
             </>
           }
         />
