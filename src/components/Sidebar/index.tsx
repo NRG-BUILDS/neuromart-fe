@@ -91,13 +91,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
     >
       <div className="absolute top-0 left-0 w-full h-full -z-50">
         {isLoading && (
-          <div className="absolute top-0 left-0 size-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+          <div className="absolute top-0 left-0 size-full bg-gradient-to-r from-primary to-secondary"></div>
         )}{' '}
         <img
           src={bg}
           alt=""
           onLoad={() => setIsLoading(false)}
-          className="size-full object-cover  relative"
+          className={`size-full object-cover animate  relative ${
+            isLoading ? 'hidden' : ''
+          }`}
         />
       </div>
       {/* <!-- SIDEBAR HEADER --> */}
